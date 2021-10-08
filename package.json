@@ -1,0 +1,19 @@
+{
+  "name": "to-do-service",
+  "version": "1.0.0",
+  "description": "Processo seletivo da empresa AlicerceEdu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dariellysantos/to-do-service.git"
+  },
+  "author": "Darielly Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dariellysantos/to-do-service/issues"
+  },
+  "homepage": "https://github.com/Dariellysantos/to-do-service#readme"
+}
