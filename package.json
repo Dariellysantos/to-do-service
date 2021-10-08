@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Dariellysantos/to-do-service/issues"
   },
-  "homepage": "https://github.com/Dariellysantos/to-do-service#readme"
+  "homepage": "https://github.com/Dariellysantos/to-do-service#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
