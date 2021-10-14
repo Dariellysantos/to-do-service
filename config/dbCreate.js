@@ -1,7 +1,10 @@
+// para criar as tabelas utilizar o comando:
+// node /config/dbCreate
+
 (async () => {
-  const database = require("./config/dbServer");
-  const Task = require("./model/taskModel");
-  const List = require("./model/listModel");
+  const database = require("./dbServer");
+  const Task = require("../model/taskModel");
+  const List = require("../model/listModel");
 
   try {
     const resultado = await database.sync();
