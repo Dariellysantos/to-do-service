@@ -21,3 +21,13 @@ exports.save = async (body) => {
 
   return task;
 };
+
+exports.update = async (idReceived, body) => {
+  const task = await Task.update(body, {
+    where: {
+      id: idReceived,
+    },
+  });
+
+  return task;
+};

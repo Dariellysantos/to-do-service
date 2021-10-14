@@ -6,6 +6,7 @@ const listController = require("./controller/listController");
 app.get("/tasks", taskController.getTasks);
 app.get("/tasks/:id", taskController.getTask);
 app.post("/task", taskController.createTask);
+app.put("/task/:id", taskController.changeTask);
 
 app.get("/lists", listController.getLists);
 
