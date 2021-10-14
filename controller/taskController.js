@@ -1,20 +1,6 @@
-exports.getTasks = (req, res) => {
-  res.status(200).json([
-    {
-      id: 1,
-      listId: 1,
-      title: "fazer api para buscar todas as tasks",
-      createdAt: "2021-04-23T00:00:00",
-      updatedAt: null,
-      deletedAt: null,
-    },
-    {
-      id: 1,
-      listId: 1,
-      title: "fazer api para buscar todas as tasks",
-      createdAt: "2021-04-23T00:00:00",
-      updatedAt: null,
-      deletedAt: null,
-    },
-  ]);
+let taskService = require("../service/taskService");
+
+exports.getTasks = async (req, res) => {
+  let testTask = await taskService.getAll();
+  res.status(200).json(testTask);
 };
