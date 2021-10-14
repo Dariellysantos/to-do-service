@@ -15,3 +15,9 @@ exports.getOne = async (id) => {
 
   return task;
 };
+
+exports.save = async (body) => {
+  const task = await Task.create(body);
+
+  return task;
+};
