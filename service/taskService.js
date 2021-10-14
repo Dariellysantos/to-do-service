@@ -31,3 +31,13 @@ exports.update = async (idReceived, body) => {
 
   return task;
 };
+
+exports.delete = async (idReceived) => {
+  const task = await Task.destroy({
+    where: {
+      id: idReceived,
+    },
+  });
+
+  return task;
+};

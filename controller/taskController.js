@@ -23,3 +23,9 @@ exports.changeTask = async (req, res) => {
   let task = await taskService.update(id, body);
   res.status(200).json(task);
 };
+
+exports.deleteTask = async (req, res) => {
+  const id = req.params.id;
+  let task = await taskService.delete(id);
+  res.status(200).json(task);
+};
