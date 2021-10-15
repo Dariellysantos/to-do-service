@@ -33,6 +33,9 @@ exports.save = async (body) => {
 };
 
 exports.update = async (idReceived, body) => {
+  if ((await Task.findByPk(idReceived)) === null) {
+    throw Error("Id não encontrado");
+  }
   if (body.listId) {
     if ((await Task.findByPk(body.listId)) === null) {
       throw Error("ERROR: listId inexistente");
