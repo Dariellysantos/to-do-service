@@ -21,7 +21,9 @@ exports.save = async (body) => {
   if (body.listId === undefined) {
     throw Error("listId não informado");
   }
-
+  if ((await List.findByPk(body.listId)) === null) {
+    throw Error("ERROR: listId inexistente");
+  }
   let task = await Task.create(body);
 
   return task;

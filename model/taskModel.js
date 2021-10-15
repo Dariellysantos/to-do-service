@@ -6,12 +6,17 @@ const Task = database.define("tasks", {
   id: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
-    allowNul: false,
+    allowNull: false,
     primaryKey: true,
   },
   title: {
     type: Sequelize.STRING,
-    allowNul: false,
+    allowNull: false,
+    vaidete: {
+      notEmpty: {
+        msg: "Esse campo não pode ser vazio",
+      },
+    },
   },
   deletedAt: {
     type: Sequelize.DATE,
