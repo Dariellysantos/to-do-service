@@ -15,5 +15,6 @@ app.get("/lists", listController.getLists);
 app.get("/list/:id", listController.getList);
 app.post("/list", listController.createList);
 app.put("/list/:id", listController.changeList);
+app.delete("/list/:id", listController.deleteList);
 
 app.listen(3000, "localhost", () => console.log("Serviço toDo ativo."));

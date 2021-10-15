@@ -46,3 +46,13 @@ exports.changeList = async (req, res) => {
     res.status(500).json(err.message);
   }
 };
+
+exports.deleteList = async (req, res) => {
+  const id = req.params.id;
+  try {
+    let list = await listService.delete(id);
+    res.status(200).json("Deletado com sucesso");
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+};

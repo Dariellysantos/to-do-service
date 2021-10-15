@@ -36,3 +36,16 @@ exports.update = async (idReceived, body) => {
 
   return list;
 };
+
+exports.delete = async (idReceived) => {
+  if ((await List.findByPk(idReceived)) === null) {
+    throw Error("Id não encontrado");
+  }
+  const list = await List.destroy({
+    where: {
+      id: idReceived,
+    },
+  });
+  console.log(list);
+  return list;
+};
