@@ -18,6 +18,9 @@ exports.getOne = async (id) => {
 };
 
 exports.save = async (body) => {
+  if (body.title === undefined) {
+    throw Error("title não informado");
+  }
   if (body.listId === undefined) {
     throw Error("listId não informado");
   }
