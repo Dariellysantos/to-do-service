@@ -10,6 +10,10 @@ exports.getAll = async () => {
 exports.getOne = async (id) => {
   const task = await Task.findByPk(id);
 
+  if (task === null) {
+    throw Error("Id não encontrado");
+  }
+
   return task;
 };
 

@@ -7,8 +7,12 @@ exports.getTasks = async (req, res) => {
 
 exports.getTask = async (req, res) => {
   const id = req.params.id;
-  let testTask = await taskService.getOne(id);
-  res.status(200).json(testTask);
+  try {
+    let testTask = await taskService.getOne(id);
+    res.status(200).json(testTask);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
 };
 
 exports.createTask = async (req, res) => {
