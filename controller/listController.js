@@ -15,3 +15,13 @@ exports.getLists = async (req, res) => {
     });
   }
 };
+
+exports.getList = async (req, res) => {
+  try {
+    const id = req.params.id;
+    let testList = await listService.getOne(id);
+    res.status(200).json(testList);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+};

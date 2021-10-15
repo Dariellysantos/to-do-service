@@ -12,5 +12,6 @@ app.put("/task/:id", taskController.changeTask);
 app.delete("/task/:id", taskController.deleteTask);
 
 app.get("/lists", listController.getLists);
+app.get("/list/:id", listController.getList);
 
 app.listen(3000, "localhost", () => console.log("Serviço toDo ativo."));
