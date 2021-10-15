@@ -37,7 +37,7 @@ exports.update = async (idReceived, body) => {
     throw Error("Id não encontrado");
   }
   if (body.listId) {
-    if ((await Task.findByPk(body.listId)) === null) {
+    if ((await List.findByPk(body.listId)) === null) {
       throw Error("ERROR: listId inexistente");
     }
   }
