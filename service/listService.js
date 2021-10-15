@@ -19,6 +19,10 @@ exports.getOne = async (id) => {
 };
 
 exports.save = async (body) => {
+  if (body.title === undefined) {
+    throw Error("title não informado");
+  }
+
   let list = await List.create(body);
 
   return list;
