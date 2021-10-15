@@ -25,3 +25,13 @@ exports.getList = async (req, res) => {
     res.status(500).json(err.message);
   }
 };
+
+exports.createList = async (req, res) => {
+  try {
+    const body = req.body;
+    let list = await listService.save(body);
+    res.status(200).json(list);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+};

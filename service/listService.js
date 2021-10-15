@@ -17,3 +17,9 @@ exports.getOne = async (id) => {
 
   return list;
 };
+
+exports.save = async (body) => {
+  let list = await List.create(body);
+
+  return list;
+};
