@@ -38,9 +38,6 @@ exports.update = async (idReceived, body) => {
       id: idReceived,
     },
   });
-  console.log(idReceived);
-  console.log(task);
-  console.log(Task);
 
   return task;
 };
