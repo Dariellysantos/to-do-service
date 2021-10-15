@@ -35,6 +35,10 @@ exports.changeTask = async (req, res) => {
 
 exports.deleteTask = async (req, res) => {
   const id = req.params.id;
-  let task = await taskService.delete(id);
-  res.status(200).json(task);
+  try {
+    let task = await taskService.delete(id);
+    res.status(200).json("Deletado com sucesso");
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
 };

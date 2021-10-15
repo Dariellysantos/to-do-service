@@ -1,9 +1,8 @@
 const List = require("../model/listModel");
 const Task = require("../model/taskModel");
+const database = require("../config/dbServer");
 
 exports.getAll = async () => {
-  const database = require("../config/dbServer");
-  const Task = require("../model/taskModel");
   await database.sync();
 
   const tasks = await Task.findAll();
@@ -51,6 +50,9 @@ exports.update = async (idReceived, body) => {
 };
 
 exports.delete = async (idReceived) => {
+  if ((await Task.findByPk(idReceived)) === null) {
+    throw Error("Id não encontrado");
+  }
   const task = await Task.destroy({
     where: {
       id: idReceived,
