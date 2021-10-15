@@ -54,11 +54,12 @@ exports.delete = async (idReceived) => {
   if ((await Task.findByPk(idReceived)) === null) {
     throw Error("Id não encontrado");
   }
+
   const task = await Task.destroy({
     where: {
       id: idReceived,
     },
   });
-  console.log(task);
+
   return task;
 };
