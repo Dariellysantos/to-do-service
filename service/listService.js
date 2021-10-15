@@ -1,7 +1,6 @@
-exports.getAll = async () => {
-  const List = require("../model/listModel");
-  const database = require("../config/dbServer");
+const List = require("../model/listModel");
 
+exports.getAll = async () => {
   const lists = await List.findAll();
 
   return lists;
