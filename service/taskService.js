@@ -33,6 +33,11 @@ exports.save = async (body) => {
 };
 
 exports.update = async (idReceived, body) => {
+  if (body.listId) {
+    if ((await Task.findByPk(body.listId)) === null) {
+      throw Error("ERROR: listId inexistente");
+    }
+  }
   const task = await Task.update(body, {
     where: {
       id: idReceived,

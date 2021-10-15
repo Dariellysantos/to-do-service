@@ -25,8 +25,12 @@ exports.createTask = async (req, res) => {
 exports.changeTask = async (req, res) => {
   const id = req.params.id;
   const body = req.body;
-  let task = await taskService.update(id, body);
-  res.status(200).json(task);
+  try {
+    let task = await taskService.update(id, body);
+    res.status(200).json("Alterado com sucesso!");
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
 };
 
 exports.deleteTask = async (req, res) => {
