@@ -1,10 +1,7 @@
 const List = require("../model/listModel");
 const Task = require("../model/taskModel");
-const database = require("../config/dbServer");
 
 exports.getAll = async () => {
-  await database.sync();
-
   const tasks = await Task.findAll();
 
   return tasks;
