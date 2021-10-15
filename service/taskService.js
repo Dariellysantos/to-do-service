@@ -1,3 +1,4 @@
+const List = require("../model/listModel");
 const Task = require("../model/taskModel");
 
 exports.getAll = async () => {
@@ -17,7 +18,11 @@ exports.getOne = async (id) => {
 };
 
 exports.save = async (body) => {
-  const task = await Task.create(body);
+  if (body.listId === undefined) {
+    throw Error("listId não informado");
+  }
+
+  let task = await Task.create(body);
 
   return task;
 };
@@ -28,6 +33,9 @@ exports.update = async (idReceived, body) => {
       id: idReceived,
     },
   });
+  console.log(idReceived);
+  console.log(task);
+  console.log(Task);
 
   return task;
 };
@@ -38,6 +46,6 @@ exports.delete = async (idReceived) => {
       id: idReceived,
     },
   });
-
+  console.log(task);
   return task;
 };

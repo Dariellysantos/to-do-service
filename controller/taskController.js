@@ -13,8 +13,13 @@ exports.getTask = async (req, res) => {
 
 exports.createTask = async (req, res) => {
   const body = req.body;
-  let task = await taskService.save(body);
-  res.status(200).json(task);
+
+  try {
+    let task = await taskService.save(body);
+    res.status(200).json(task);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
 };
 
 exports.changeTask = async (req, res) => {
