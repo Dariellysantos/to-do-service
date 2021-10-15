@@ -41,7 +41,7 @@ exports.changeList = async (req, res) => {
   const body = req.body;
   try {
     let list = await listService.update(id, body);
-    res.status(200).json("Alterado com sucesso!");
+    res.status(201).json("Alterado com sucesso!");
   } catch (err) {
     res.status(500).json(err.message);
   }
