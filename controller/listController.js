@@ -35,3 +35,14 @@ exports.createList = async (req, res) => {
     res.status(500).json(err.message);
   }
 };
+
+exports.changeList = async (req, res) => {
+  const id = req.params.id;
+  const body = req.body;
+  try {
+    let list = await listService.update(id, body);
+    res.status(200).json("Alterado com sucesso!");
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+};

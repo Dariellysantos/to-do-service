@@ -23,3 +23,16 @@ exports.save = async (body) => {
 
   return list;
 };
+
+exports.update = async (idReceived, body) => {
+  if ((await List.findByPk(idReceived)) === null) {
+    throw Error("Id não encontrado");
+  }
+  const list = await List.update(body, {
+    where: {
+      id: idReceived,
+    },
+  });
+
+  return list;
+};
