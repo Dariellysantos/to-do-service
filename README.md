@@ -4,24 +4,30 @@
 
 ##### Foi desenvolvido por [Darielly Santos](https://www.linkedin.com/in/darielly-santos/)
 
-<br>
+<br><br>
 
 Esse projeto foi desenvolvido para o processo seletivo da _Alicerce Educação_.
 
 O objetivo era desenvolver um serviço de API Rest com crud para as entidades _task_ e _list_ relacionaddas conforme abaixo:
 
 ![relacionamento entre task e list](relacionamento-task-list.jpeg)
+
 <br>
 
 ## Pré requisitos
 
 <br>
+
 - NodeJs - v10.19.0 - acesse o site oficial para mais informações: https://nodejs.org/en/
 - Npm - 6.14.4 - acesse o site oficial para mais informações: https://www.npmjs.com/
 - MySql - acesse o site oficial para mais informações: https://www.mysql.com/
+
 <br>
+
 ## Criar tabela no banco
+
 <br>
+
 Para exucutar o proeto é necessario ter instalado o MySql para a persistência dos dados.
 
 - Para criar as tabelas iniciais :
